@@ -18,15 +18,15 @@ public class MathServerWorker extends SwingWorker<Void, String> {
 	private boolean stopping = false;
 	private String clientIP;
 
-	public MathServerWorker(Socket s, Functionality func) throws IOException {
+	public MathServerWorker(Socket s) throws IOException {
 		client = s;
-		calculator = func;
+		calculator = new Functionality();
 		din = new DataInputStream(client.getInputStream());
 		dout = new DataOutputStream(client.getOutputStream());
 		clientIP = "Client("+client.getRemoteSocketAddress().toString()+")";
 	}
 
-	@Override
+	@Override 
 	protected Void doInBackground() throws Exception {
 		String query;
 		try {

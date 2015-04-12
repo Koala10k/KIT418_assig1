@@ -37,7 +37,7 @@ public class Functionality {
 
 	}
 
-	public synchronized String calculate(String opt, String val) {
+	public String calculate(String opt, String val) {
 		String answer;
 		double dval = Double.parseDouble(val);
 		switch(opt){

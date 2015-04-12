@@ -34,7 +34,7 @@ public class MathServerThread extends SwingWorker<Void, Void>{
 			MathServer.printInfo("Math Server is listening on port:" + MathServer.listeningPort);
 			publish();
 			while (running) {
-				new MathServerWorker(s.accept(), new Functionality()).execute();
+				new MathServerWorker(s.accept()).execute();
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
